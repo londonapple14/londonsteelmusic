@@ -195,6 +195,53 @@
   .contact-lines small{display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--sun);margin-bottom:3px}
   .contact-lines b{font-size:16.5px;color:#fff;word-break:break-all}
 
+  @media(max-width:640px){
+    .hero-in{padding:38px 0 30px}
+    .kicker{margin-bottom:16px}
+    .hero-sub{margin-top:14px}
+    .hero-cta{margin-top:22px}
+    .hero-photo figure{width:180px}
+    .hero-stats{display:none}
+  }
+
+  /* ---------- Hub doors ---------- */
+  .hub-sec{padding:52px 0 8px}
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.doors{grid-template-columns:1fr}}
+  .door{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    background:var(--card);border:1.5px solid var(--line);border-radius:18px;
+    padding:24px 26px;text-decoration:none;min-height:104px;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .door:hover{border-color:var(--bronze);transform:translateY(-2px);box-shadow:0 14px 30px rgba(33,26,21,.09)}
+  .door h3{font-family:'Fraunces',serif;font-size:25px;font-weight:600;line-height:1.15}
+  .door p{color:var(--ink-soft);font-size:15px;font-weight:600;margin-top:4px}
+  .door .go{
+    flex:none;width:46px;height:46px;border-radius:50%;
+    border:1.5px solid var(--bronze);color:var(--bronze-dark);
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+  }
+  .door.featured{
+    grid-column:1 / -1;
+    background:linear-gradient(150deg,#2a3a20,#141f0e);
+    border-color:rgba(230,200,119,.5);color:#f5f3e6;
+  }
+  .door.featured h3{color:#fff;font-size:29px}
+  .door.featured p{color:#dde2c8}
+  .door.featured .go{border-color:var(--sun);color:var(--sun)}
+  .door .free-tag{
+    display:inline-block;font-size:11px;font-weight:800;letter-spacing:.2em;
+    color:#141f0e;background:var(--sun);border-radius:999px;padding:4px 11px;margin-bottom:9px;
+  }
+  .hub-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .hub-social a{
+    flex:1 1 auto;text-align:center;background:var(--ink);color:#f5efe4;
+    text-decoration:none;padding:14px 12px;border-radius:999px;
+    font-weight:800;font-size:14.5px;transition:background .15s ease;
+  }
+  .hub-social a:hover{background:var(--bronze-dark)}
+
   /* Footer */
   footer{border-top:1px solid var(--line);padding:40px 0 48px;color:var(--ink-soft)}
   .foot-in{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
@@ -246,6 +293,60 @@
     </div>
   </div>
 </header>
+
+<section class="hub-sec">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:26px">
+      <div class="sec-tag">Start Here</div>
+      <h2>Everything in one place</h2>
+    </div>
+    <div class="doors">
+      <a class="door featured" href="guide.html">
+        <div>
+          <span class="free-tag">Free · For Dads</span>
+          <h3>The First-Time Dad Guide</h3>
+          <p>The free guide for dads — every trimester to postpartum.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="door" href="#listen">
+        <div>
+          <h3>Music</h3>
+          <p>Listen to the songs.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="door" href="https://youtube.com/@londonnsteel" target="_blank" rel="noopener">
+        <div>
+          <h3>Watch</h3>
+          <p>Videos and reels.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="door" href="#about">
+        <div>
+          <h3>About</h3>
+          <p>The man behind the music.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="door" href="#collabs">
+        <div>
+          <h3>Collabs</h3>
+          <p>Work with London.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+    </div>
+    <div class="hub-social">
+      <a href="https://www.instagram.com/london.steel" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@london.steel" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://youtube.com/@londonnsteel" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/us/artist/london-steel/1547276515" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+  </div>
+</section>
 
 <section id="listen">
   <div class="wrap">
