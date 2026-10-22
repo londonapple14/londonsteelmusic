@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First-Time Dad Guide — London Steel</title>
+<meta name="description" content="A free guide for first-time dads: every trimester, labor and delivery, and postpartum — what's happening with her, what's happening with the baby, and what your actual job is. By London Steel.">
+<link rel="icon" href="assets/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232d1c;
+    --ink-soft:#4e5a44;
+    --cream:#f9f7ee;
+    --cream-2:#edf0e0;
+    --bronze:#71873f;
+    --bronze-dark:#57682e;
+    --line:#dde2c8;
+    --card:#ffffff;
+    --sun:#e6c877;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(249,247,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--bronze)}
+  .brand span{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:.04em}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:600}
+  .nav-links a{text-decoration:none;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--bronze-dark)}
+  @media(max-width:640px){.nav-links{display:none}}
+  .hero{
+    background:
+      radial-gradient(900px 480px at 85% -10%, rgba(230,200,119,.22), transparent 60%),
+      radial-gradient(700px 500px at 0% 110%, rgba(113,135,63,.35), transparent 55%),
+      linear-gradient(160deg,#2a3a20 0%,#141f0e 70%);
+    color:#f5f3e6;
+  }
+  .hero-in{padding:76px 0 68px;max-width:760px}
+  .kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--sun);border:1px solid rgba(230,200,119,.45);border-radius:999px;padding:7px 14px;margin-bottom:26px}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(42px,6.6vw,68px);line-height:1.02}
+  h1 em{font-style:italic;font-weight:400;color:var(--sun)}
+  .hero-sub{margin-top:20px;font-size:clamp(16.5px,2.2vw,19.5px);color:#e9ead9;font-weight:500;max-width:36em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--bronze);color:#fff;box-shadow:0 10px 24px rgba(87,104,46,.4)}
+  .btn-gold:hover{background:var(--bronze-dark)}
+  .btn-ghost{border:1.5px solid rgba(245,243,230,.45);color:#f5f3e6}
+  .btn-ghost:hover{border-color:var(--sun);color:var(--sun)}
+  section{padding:64px 0}
+  .sec-tag{font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze-dark);margin-bottom:12px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4.4vw,42px);line-height:1.1}
+  .letter{max-width:720px;font-size:17.5px;color:var(--ink)}
+  .letter p{margin-bottom:16px}
+  .letter .sig{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--bronze-dark)}
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .toc a{padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-weight:700;font-size:14.5px}
+  .toc a:hover{border-color:var(--bronze);color:var(--bronze-dark)}
+  .chapter{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:38px 36px;margin-bottom:28px}
+  @media(max-width:640px){.chapter{padding:28px 22px}}
+  .chapter .stage{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze-dark)}
+  .chapter h3{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3.6vw,34px);margin:8px 0 6px}
+  .chapter .weeks{color:var(--ink-soft);font-weight:600;font-size:14.5px;margin-bottom:20px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:22px}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}}
+  .cols h4,.jobs h4{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-dark);margin-bottom:8px}
+  .cols p{color:var(--ink-soft);font-size:15.5px}
+  .jobs ul{list-style:none}
+  .jobs li{padding:7px 0 7px 30px;position:relative;font-size:15.5px;border-bottom:1px dashed var(--line)}
+  .jobs li:last-child{border-bottom:none}
+  .jobs li::before{content:"✓";position:absolute;left:2px;color:var(--bronze);font-weight:800}
+  .callout{margin-top:22px;background:#fdf6dd;border:1px solid var(--sun);border-left:5px solid var(--sun);border-radius:12px;padding:16px 18px;font-size:15.5px}
+  .callout b{display:block;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#8a6d1f;margin-bottom:5px}
+  .close-band{background:linear-gradient(160deg,#2a3a20 0%,#141f0e 70%);color:#f5f3e6;border-radius:22px;padding:44px 38px}
+  .close-band h2{color:#fff}
+  .close-band p{color:#e9ead9;max-width:44em;margin-top:12px;font-size:16.5px}
+  footer{border-top:1px solid var(--line);padding:30px 0;margin-top:10px}
+  .foot-in{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+  .foot-social{display:flex;gap:20px;font-weight:700;font-size:14.5px}
+  .foot-social a{text-decoration:none}
+  .foot-social a:hover{color:var(--bronze-dark)}
+  footer small{font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">
+      <img src="assets/profile.jpg" alt="London Steel">
+      <span>LONDON STEEL</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#listen">Listen</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#about">About</a>
+      <a href="guide.html">Dad Guide</a>
+      <a href="index.html#collabs">Collabs</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <span class="kicker">Free Guide · For First-Time Dads</span>
+    <h1>The First-Time<br><em>Dad Guide</em></h1>
+    <p class="hero-sub">Every trimester, labor &amp; delivery, and postpartum — what's happening with her, what's happening with the baby, and what your actual job is through all of it.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#start">Start Reading ↓</a>
+      <a class="btn btn-ghost" href="assets/first-time-dad-guide.pdf">Download the PDF</a>
+    </div>
+  </div>
+</header>
+
+<section id="start" style="padding-bottom:30px">
+  <div class="wrap">
+    <div class="sec-tag">Before You Start</div>
+    <h2 style="margin-bottom:22px">A word from a dad who's in it</h2>
+    <div class="letter">
+      <p>Hey, I'm London. My wife and I are expecting our first — a baby girl — and when we found out, I went looking for the guide I actually needed. Not a medical textbook. Not a comedy bit about diapers. Just a straight answer to one question: <strong>what is my job in all of this?</strong></p>
+      <p>I couldn't find it in one place, so I started writing it down. This is that notebook. Everything here is either something I've lived in these last months or something a dad ahead of me drilled into me before I needed it. Where I'm still walking toward it — labor, delivery, the newborn weeks — I'll tell you plainly how I'm preparing.</p>
+      <p>Take what's useful. Send it to a dad who's a few weeks behind you. That's how this is supposed to travel.</p>
+      <p class="sig">— London</p>
+    </div>
+    <div class="toc" style="margin-top:26px">
+      <a href="#t1">First Trimester</a>
+      <a href="#t2">Second Trimester</a>
+      <a href="#t3">Third Trimester</a>
+      <a href="#labor">Labor &amp; Delivery</a>
+      <a href="#postpartum">Postpartum</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+
+    <div class="chapter" id="t1">
+      <div class="stage">Chapter One</div>
+      <h3>First Trimester</h3>
+      <div class="weeks">Weeks 1–12 · The invisible season</div>
+      <div class="cols">
+        <div>
+          <h4>What's happening with her</h4>
+          <p>Her body is building a person and a whole new organ to feed them, and the hormones doing it do not care about her schedule. Nausea that is not just in the morning. Smells hitting her like a wall — food, trash, cologne, the fridge. An exhaustion that sleep doesn't fix. And underneath all of it, most days, a quiet fear she won't say out loud.</p>
+        </div>
+        <div>
+          <h4>What's happening with the baby</h4>
+          <p>Almost everything foundational happens here: the heartbeat, the brain, the organs — built in weeks when nobody can see a thing. She can feel all of it. The world can see none of it. Remember that gap; it's the whole chapter.</p>
+        </div>
+      </div>
+      <div class="jobs">
+        <h4>Your job this trimester</h4>
+        <ul>
+          <li>Believe her about how she feels, even when she "looks fine." Most of this trimester is invisible to you and very real to her.</li>
+          <li>Take the smells out of the house — trash, leftovers, strong food. Some weeks, your cologne is not exempt.</li>
+          <li>Food runs without commentary. What she can eat will change daily. Whatever works today, go get it, no face about it.</li>
+          <li>Let her sleep whenever sleep comes, and guard it like it matters — because it does.</li>
+          <li>Show up to the early appointments. There's a heartbeat coming that you do not want to hear about secondhand.</li>
+          <li>Start praying over her and the baby — out loud, where she can hear it.</li>
+        </ul>
+      </div>
+      <div class="callout"><b>What nobody tells you</b>It feels like forever, and it is temporary. Both are true at the same time. And she will remember how you treated her in the weeks she felt the worst — long after she's forgotten who bought what.</div>
+    </div>
+
+    <div class="chapter" id="t2">
+      <div class="stage">Chapter Two</div>
+      <h3>Second Trimester</h3>
+      <div class="weeks">Weeks 13–27 · The golden window</div>
+      <div class="cols">
+        <div>
+          <h4>What's happening with her</h4>
+          <p>For most women the fog lifts: energy comes back, appetite comes back, the bump shows up. New things arrive too — back and hip aches, a body changing faster than her clothes can keep up with, and a mind that has moved on to planning everything.</p>
+        </div>
+        <div>
+          <h4>What's happening with the baby</h4>
+          <p>The anatomy scan around week 20 checks the baby from head to toe. And sometime in here, the baby's hearing switches on — voices first, muffled but real. Your daughter is already learning what you sound like. Kicks start as flutters and become unmistakable.</p>
+        </div>
+      </div>
+      <div class="jobs">
+        <h4>Your job this trimester</h4>
+        <ul>
+          <li>Walk into the anatomy scan with the right seriousness. You're going in to <em>see</em> the baby. She's going in to find out if the baby is <em>okay</em>. Match her.</li>
+          <li>Start talking to the bump. It will feel weird. Do it anyway — tell her about your day, read out loud, hand on her stomach before bed.</li>
+          <li>Heavy lifting is yours now: the nursery, the furniture, the hauling, the building.</li>
+          <li>Handle the boring prep while you have energy: pediatrician shortlist, insurance questions, your leave paperwork.</li>
+          <li>Keep dating your wife on purpose. This is the window where it's easiest — don't waste it.</li>
+        </ul>
+      </div>
+      <div class="callout"><b>What nobody tells you</b>This is the calmest this gets for a while, and it's not an accident — it's a runway. Use it to prepare, and use it to enjoy her. The third trimester is a different sport.</div>
+    </div>
+
+    <div class="chapter" id="t3">
+      <div class="stage">Chapter Three</div>
+      <h3>Third Trimester</h3>
+      <div class="weeks">Weeks 28–birth · The long nights</div>
+      <div class="cols">
+        <div>
+          <h4>What's happening with her</h4>
+          <p>Sleep falls apart. No position stays comfortable — back, hips, heartburn, a bladder with no room left — and every time she finally drifts off, something wakes her. Then her mind starts racing: labor, readiness, everything that could go wrong. She's physically exhausted with a brain that won't turn off, for weeks — and she's still showing up every single day.</p>
+        </div>
+        <div>
+          <h4>What's happening with the baby</h4>
+          <p>Growing fast and running out of room. Her hearing is fully online now — she responds to voices and touch, and the voice she's learning best is the one that talks to her most. Bonding isn't a thing that starts at birth. For her, it already started.</p>
+        </div>
+      </div>
+      <div class="jobs">
+        <h4>Your job this trimester</h4>
+        <ul>
+          <li>Protect her sleep like it's your job — because now it literally is. Take the mornings: the house, the responsibilities, all of it, so she can sleep when sleep finally comes.</li>
+          <li>Give her standing permission to wake you in the night if she can't sleep. She probably never will. Knowing she can is what keeps her from feeling alone in it.</li>
+          <li>Don't try to fix what you can't fix. She doesn't need a solution for the sleep. She needs to know you see what it's costing her.</li>
+          <li>Keep talking to your baby. Don't wait until she's born and start from scratch.</li>
+          <li>Hospital bag packed by week 36. Car seat installed before you think you need it. Route to the hospital driven once, on purpose.</li>
+          <li>Tell her she's doing an amazing job. Not sometimes. Every day.</li>
+        </ul>
+      </div>
+      <div class="callout"><b>What nobody tells you</b>The last weeks feel slow to everybody except the man who isn't carrying them. Your whole job is making sure she doesn't carry them alone.</div>
+    </div>
+
+    <div class="chapter" id="labor">
+      <div class="stage">Chapter Four</div>
+      <h3>Labor &amp; Delivery</h3>
+      <div class="weeks">The day itself · How I'm preparing</div>
+      <div class="cols">
+        <div>
+          <h4>Before it starts</h4>
+          <p>Know her birth preferences and have them written down where you can find them at 3 a.m. Know where the bag is, where the car is, and how long the drive actually takes. Eat and sleep when you can in the early hours — you're no good to anybody empty.</p>
+        </div>
+        <div>
+          <h4>In the room</h4>
+          <p>When she can't talk, you're her voice. Nurses and doctors will look to you — know what she wants before you're asked. And understand going in: you will watch the person you love most be in pain you cannot take away. Staying present anyway is not the backup plan. It is the job.</p>
+        </div>
+      </div>
+      <div class="jobs">
+        <h4>Your job on the day</h4>
+        <ul>
+          <li>Be the calm one. She gets your steadiness, not your panic.</li>
+          <li>Time contractions. Track what's asked. Phones, updates, and visitor questions are yours to field — never hers.</li>
+          <li>Cold water, ice chips, a hand to crush, pressure on her back. Small things, done without being asked twice, are the whole job.</li>
+          <li>Do not eat a full meal in front of a woman who can't eat. Step out if you have to eat.</li>
+          <li>Pray out loud if she wants it. Say less than you think you should. Stay closer than feels useful.</li>
+          <li>When the baby comes, get your hands on her too — skin to skin isn't only for mom. She's been learning your voice for months. Let her meet it.</li>
+        </ul>
+      </div>
+      <div class="callout"><b>What nobody tells you</b>Every dad ahead of me says the same thing: the room changes temperature the second your child is in it. Let yourself feel that. You don't have to hold it together every second of the biggest day of your life.</div>
+    </div>
+
+    <div class="chapter" id="postpartum">
+      <div class="stage">Chapter Five</div>
+      <h3>Postpartum</h3>
+      <div class="weeks">The fourth trimester · The weeks nobody films</div>
+      <div class="cols">
+        <div>
+          <h4>What's happening with her</h4>
+          <p>She is healing from something major — whether the world can see it or not. Hormones crash, then level. Feeding is a full-time job with a steep learning curve, and her body is doing recovery and production at the same time, on broken sleep.</p>
+        </div>
+        <div>
+          <h4>What's happening with the baby</h4>
+          <p>She eats, she sleeps in fragments, and she wants to be held almost constantly. That's not a problem to solve — that's the design. She spent nine months never once being alone or cold or hungry. You're the adjustment team.</p>
+        </div>
+      </div>
+      <div class="jobs">
+        <h4>Your job in the first weeks</h4>
+        <ul>
+          <li>Run the house — food, dishes, laundry, the door — so her only jobs are healing and feeding.</li>
+          <li>Take a real night shift so she gets at least one unbroken stretch of sleep. A rested mom is not a luxury; it's the foundation.</li>
+          <li>Learn the difference between the baby blues and the warning signs. Sadness that doesn't lift after about two weeks, numbness, rage, or scary thoughts is not weakness — it's a phone call to the doctor, and you might be the one who has to make it.</li>
+          <li>Visitors earn their visit: they bring food, they wash something, they hold the baby so she can shower — then they go home.</li>
+          <li>Keep choosing your wife in small daily ways. She's still your person, not just the baby's mother.</li>
+        </ul>
+      </div>
+      <div class="callout"><b>What nobody tells you</b>The first two weeks are survival, and survival is enough. The joy comes in waves between the hard parts — and then one morning she's looking at you like she knows you. She does. She's been learning your voice since before she was born.</div>
+    </div>
+
+    <div class="close-band">
+      <div class="sec-tag" style="color:#e6c877">The Through-Line</div>
+      <h2>Same job, every stage</h2>
+      <p>Every chapter of this asks the same thing of you in a different costume: <strong>see her, carry what's yours to carry, and be present before you try to be useful.</strong> That's the whole guide, and it's enough to build a family on.</p>
+      <p>If this helped you, follow along — I post what I'm learning as I learn it, and the music that comes out of it. And send this page to one dad who needs it. That's the deal.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="https://www.instagram.com/london.steel" target="_blank" rel="noopener">Follow @london.steel</a>
+        <a class="btn btn-ghost" href="index.html">Back to the Music</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <small>© 2026 London Steel · officiallondonsteel.com · New York City</small>
+    <div class="foot-social">
+      <a href="https://www.instagram.com/london.steel" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@london.steel" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://youtube.com/@londonnsteel" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/us/artist/london-steel/1547276515" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
