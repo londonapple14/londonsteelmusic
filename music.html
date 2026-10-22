@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music — London Steel</title>
+<meta name="description" content="Listen to London Steel: streaming on Spotify, Apple Music, YouTube and SoundCloud. Featured singles and the full catalog.">
+<link rel="icon" href="assets/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232d1c;
+    --ink-soft:#4e5a44;
+    --cream:#f9f7ee;
+    --cream-2:#edf0e0;
+    --bronze:#71873f;
+    --bronze-dark:#57682e;
+    --line:#dde2c8;
+    --card:#ffffff;
+    --sun:#e6c877;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(249,247,238,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--bronze)}
+  .brand span{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:.04em}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:600}
+  .nav-links a{text-decoration:none;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--bronze-dark)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 480px at 85% -10%, rgba(230,200,119,.22), transparent 60%),
+      radial-gradient(700px 500px at 0% 110%, rgba(113,135,63,.35), transparent 55%),
+      linear-gradient(160deg,#2a3a20 0%,#141f0e 70%);
+    color:#f5f3e6;
+  }
+  .hero-in{
+    display:grid;grid-template-columns:1.25fr .75fr;gap:48px;
+    padding:84px 0 76px;align-items:center;
+  }
+  @media(max-width:820px){.hero-in{grid-template-columns:1fr;padding:56px 0}}
+  .kicker{
+    display:inline-block;font-size:12px;font-weight:800;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--sun);
+    border:1px solid rgba(230,200,119,.45);border-radius:999px;
+    padding:7px 14px;margin-bottom:26px;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(52px,8vw,92px);line-height:.98;letter-spacing:.01em;
+  }
+  h1 em{font-style:italic;font-weight:400;color:var(--sun)}
+  .hero-sub{
+    margin-top:22px;font-size:clamp(17px,2.2vw,20px);
+    color:#e9ead9;max-width:34em;font-weight:500;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 26px;border-radius:999px;
+    font-weight:800;font-size:15px;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--bronze);color:#fff;box-shadow:0 10px 24px rgba(87,104,46,.4)}
+  .btn-gold:hover{background:var(--bronze-dark)}
+  .btn-ghost{border:1.5px solid rgba(245,243,230,.45);color:#f5f3e6}
+  .btn-ghost:hover{border-color:var(--sun);color:var(--sun)}
+  .hero-stats{display:flex;gap:34px;margin-top:42px;flex-wrap:wrap}
+  .hero-stats div b{display:block;font-family:'Fraunces',serif;font-size:26px;color:#fff}
+  .hero-stats div span{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#b9c29e}
+  .hero-photo{justify-self:center}
+  .hero-photo figure{
+    width:min(300px,72vw);border-radius:18px;overflow:hidden;
+    border:1px solid rgba(230,200,119,.35);
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+    transform:rotate(2deg);
+  }
+  .hero-photo img{width:100%;display:block}
+  .hero-photo figcaption{
+    background:#1d2812;color:var(--sun);font-size:12.5px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:10px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:76px 0}
+  .sec-head{max-width:640px;margin-bottom:38px}
+  .sec-tag{
+    font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--bronze-dark);margin-bottom:12px;
+  }
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(32px,4.6vw,44px);line-height:1.08}
+  .sec-head p{margin-top:14px;color:var(--ink-soft);font-size:16.5px}
+
+  /* Listen */
+  .player-card{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:22px;box-shadow:0 18px 40px rgba(33,26,21,.07);
+  }
+  .player-card iframe{width:100%;border:0;border-radius:12px;display:block}
+  .platforms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  @media(max-width:820px){.platforms{grid-template-columns:repeat(2,1fr)}}
+  .plat{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--ink);color:#f5efe4;text-decoration:none;
+    padding:16px 10px;border-radius:14px;font-weight:800;font-size:15px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .plat:hover{background:var(--bronze-dark);transform:translateY(-2px)}
+  .plat small{display:block;font-weight:600;font-size:11.5px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
+
+  /* Featured singles */
+  .singles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:720px){.singles{grid-template-columns:1fr}}
+  .single{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;text-decoration:none;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .single:hover{border-color:var(--bronze);transform:translateY(-2px);box-shadow:0 14px 30px rgba(33,26,21,.08)}
+  .single h3{font-family:'Fraunces',serif;font-size:23px;font-weight:600}
+  .single p{color:var(--ink-soft);font-size:13.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .single .go{
+    flex:none;width:42px;height:42px;border-radius:50%;
+    border:1.5px solid var(--bronze);color:var(--bronze-dark);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+
+  /* Tracklist */
+  .tracks{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tracklist{list-style:none;border-top:1px solid var(--line)}
+  .tracklist li{
+    display:flex;align-items:baseline;gap:18px;
+    padding:15px 6px;border-bottom:1px solid var(--line);
+  }
+  .tracklist .no{font-family:'Fraunces',serif;color:var(--bronze-dark);font-weight:600;width:30px;flex:none}
+  .tracklist .name{font-weight:700;font-size:17px}
+  .tracklist .genre{margin-left:auto;color:var(--ink-soft);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-align:right}
+  .tracklist .dur{color:var(--ink-soft);font-variant-numeric:tabular-nums;font-size:14.5px;width:44px;text-align:right;flex:none}
+  .all-music{margin-top:28px;text-align:center}
+  .all-music a{color:var(--bronze-dark);font-weight:800;text-decoration:none;border-bottom:2px solid var(--bronze);padding-bottom:2px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-grid img{width:100%;max-width:340px;border-radius:18px;box-shadow:0 20px 44px rgba(33,26,21,.16)}
+  .about-copy p{font-size:17.5px;color:var(--ink-soft);margin-bottom:18px}
+  .about-copy p strong{color:var(--ink)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  @media(max-width:640px){.pillars{grid-template-columns:1fr}}
+  .pillar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .pillar b{display:block;font-family:'Fraunces',serif;font-size:19px;margin-bottom:5px}
+  .pillar span{font-size:14px;color:var(--ink-soft)}
+
+  /* Collab / contact */
+  .collab{
+    background:linear-gradient(150deg,#2a3a20,#141f0e);
+    color:#f5f3e6;border-radius:24px;padding:52px 44px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+  }
+  @media(max-width:820px){.collab{grid-template-columns:1fr;padding:38px 26px}}
+  .collab h2{color:#fff}
+  .collab p{color:#dde2c8;margin-top:14px;font-size:16.5px;max-width:32em}
+  .contact-lines{display:grid;gap:14px}
+  .contact-lines a{
+    display:block;background:rgba(249,247,238,.06);border:1px solid rgba(230,200,119,.35);
+    border-radius:14px;padding:16px 20px;text-decoration:none;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .contact-lines a:hover{border-color:var(--sun);background:rgba(249,247,238,.1)}
+  .contact-lines small{display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--sun);margin-bottom:3px}
+  .contact-lines b{font-size:16.5px;color:#fff;word-break:break-all}
+
+  @media(max-width:640px){
+    .hero-in{padding:26px 0 20px;gap:20px}
+    .kicker{margin-bottom:14px;font-size:10.5px;letter-spacing:.18em;padding:6px 12px}
+    h1{font-size:47px}
+    .hero-sub{margin-top:12px;font-size:16.5px}
+    .sub-more{display:none}
+    .hero-cta{margin-top:20px}
+    .hero-cta .btn{padding:12px 20px;font-size:14px}
+    .hero-photo figure{width:132px}
+    .hero-stats{display:none}
+    .hub-sec{padding-top:28px}
+    .hub-sec h2{font-size:29px}
+    .door{min-height:92px;padding:20px 22px}
+  }
+
+  /* ---------- Hub doors ---------- */
+  .hub-sec{padding:52px 0 8px}
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.doors{grid-template-columns:1fr}}
+  .door{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    background:var(--card);border:1.5px solid var(--line);border-radius:18px;
+    padding:24px 26px;text-decoration:none;min-height:104px;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .door:hover{border-color:var(--bronze);transform:translateY(-2px);box-shadow:0 14px 30px rgba(33,26,21,.09)}
+  .door h3{font-family:'Fraunces',serif;font-size:25px;font-weight:600;line-height:1.15}
+  .door p{color:var(--ink-soft);font-size:15px;font-weight:600;margin-top:4px}
+  .door .go{
+    flex:none;width:46px;height:46px;border-radius:50%;
+    border:1.5px solid var(--bronze);color:var(--bronze-dark);
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+  }
+  .door.featured{
+    grid-column:1 / -1;
+    background:linear-gradient(150deg,#2a3a20,#141f0e);
+    border-color:rgba(230,200,119,.5);color:#f5f3e6;
+  }
+  .door.featured h3{color:#fff;font-size:29px}
+  .door.featured p{color:#dde2c8}
+  .door.featured .go{border-color:var(--sun);color:var(--sun)}
+  .door .free-tag{
+    display:inline-block;font-size:11px;font-weight:800;letter-spacing:.2em;
+    color:#141f0e;background:var(--sun);border-radius:999px;padding:4px 11px;margin-bottom:9px;
+  }
+  .hub-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .hub-social a{
+    flex:1 1 auto;text-align:center;background:var(--ink);color:#f5efe4;
+    text-decoration:none;padding:14px 12px;border-radius:999px;
+    font-weight:800;font-size:14.5px;transition:background .15s ease;
+  }
+  .hub-social a:hover{background:var(--bronze-dark)}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:40px 0 48px;color:var(--ink-soft)}
+  .foot-in{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+  .foot-social{display:flex;gap:20px;font-weight:700;font-size:14.5px}
+  .foot-social a{text-decoration:none}
+  .foot-social a:hover{color:var(--bronze-dark)}
+  footer small{font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">
+      <img src="assets/profile.jpg" alt="London Steel">
+      <span>LONDON STEEL</span>
+    </a>
+    <div class="nav-links">
+      <a href="music.html">Music</a>
+      <a href="guide.html">Dad Guide</a>
+      <a href="about.html">About</a>
+      <a href="collabs.html">Collabs</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap" style="padding:56px 24px 48px">
+    <span class="kicker">London Steel · Music</span>
+    <h1 style="font-size:clamp(40px,6vw,64px)">The <em>Music</em></h1>
+    <p class="hero-sub">Every song written, performed, and produced by London himself. Start with the player, or jump to your platform.</p>
+  </div>
+</header>
+
+<section id="listen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Listen</div>
+      <h2>Press play</h2>
+      <p>The latest from London Steel, streaming everywhere. Start with the player below, or jump to your platform of choice.</p>
+    </div>
+    <div class="player-card">
+      <iframe src="https://open.spotify.com/embed/artist/1QKMqpWg2iIyVIx6MmWQuK?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="London Steel on Spotify"></iframe>
+      <div class="platforms">
+        <a class="plat" href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener"><span>Spotify<small>Stream now</small></span></a>
+        <a class="plat" href="https://music.apple.com/us/artist/london-steel/1547276515" target="_blank" rel="noopener"><span>Apple Music<small>Stream now</small></span></a>
+        <a class="plat" href="https://youtube.com/@londonnsteel" target="_blank" rel="noopener"><span>YouTube<small>Watch videos</small></span></a>
+        <a class="plat" href="https://soundcloud.com/london-steel-5" target="_blank" rel="noopener"><span>SoundCloud<small>Full archive</small></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="music" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Featured Singles</div>
+      <h2>Start with these</h2>
+    </div>
+    <div class="singles">
+      <a class="single" href="https://ffm.to/whatiddo" target="_blank" rel="noopener">
+        <div><h3>what i'd do</h3><p>Featured single</p></div>
+        <span class="go">→</span>
+      </a>
+      <a class="single" href="https://distrokid.com/hyperfollow/londonsteel/heaven" target="_blank" rel="noopener">
+        <div><h3>Heaven</h3><p>Indie folk</p></div>
+        <span class="go">→</span>
+      </a>
+      <a class="single" href="https://distrokid.com/hyperfollow/londonsteel/drifting" target="_blank" rel="noopener">
+        <div><h3>Drifting</h3><p>Rap</p></div>
+        <span class="go">→</span>
+      </a>
+      <a class="single" href="https://ffm.to/vain" target="_blank" rel="noopener">
+        <div><h3>VAIN</h3><p>Featured single</p></div>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="tracks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">The Catalog</div>
+      <h2>Top tracks</h2>
+      <p>A decade of writing across R&amp;B, folk, and rap — every song written and produced by London Steel.</p>
+    </div>
+    <ol class="tracklist">
+      <li><span class="no">01</span><span class="name">No More Tears</span><span class="genre">R&amp;B / Pop</span><span class="dur">3:54</span></li>
+      <li><span class="no">02</span><span class="name">what i'd do</span><span class="genre"></span><span class="dur">3:15</span></li>
+      <li><span class="no">03</span><span class="name">Heaven</span><span class="genre">Indie Folk</span><span class="dur">3:00</span></li>
+      <li><span class="no">04</span><span class="name">VAIN</span><span class="genre"></span><span class="dur">2:27</span></li>
+      <li><span class="no">05</span><span class="name">DENIAL</span><span class="genre"></span><span class="dur">3:34</span></li>
+      <li><span class="no">06</span><span class="name">Gone Too Soon</span><span class="genre"></span><span class="dur">2:40</span></li>
+      <li><span class="no">07</span><span class="name">DRIFTING</span><span class="genre">Rap</span><span class="dur">2:16</span></li>
+      <li><span class="no">08</span><span class="name">bedroom</span><span class="genre"></span><span class="dur">1:56</span></li>
+      <li><span class="no">09</span><span class="name">WHY NOT NOW</span><span class="genre"></span><span class="dur">2:47</span></li>
+      <li><span class="no">10</span><span class="name">Be Here Now</span><span class="genre"></span><span class="dur">2:48</span></li>
+      <li><span class="no">11</span><span class="name">Night and Day</span><span class="genre"></span><span class="dur">—</span></li>
+    </ol>
+    <div class="all-music">
+      <a href="https://ffm.bio/londonsteel" target="_blank" rel="noopener">Hear the full catalog on every platform →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <small>© 2026 London Steel · officiallondonsteel.com · New York City</small>
+    <div class="foot-social">
+      <a href="https://www.instagram.com/london.steel" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@london.steel" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://youtube.com/@londonnsteel" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/us/artist/london-steel/1547276515" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
