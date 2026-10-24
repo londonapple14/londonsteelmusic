@@ -292,7 +292,7 @@
     <div class="player-card">
       <iframe src="https://open.spotify.com/embed/artist/1QKMqpWg2iIyVIx6MmWQuK?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="London Steel on Spotify"></iframe>
       <div class="platforms">
-        <a class="plat" href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener"><span>Spotify<small>Stream now</small></span></a>
+        <a class="plat" href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" data-app-link="spotify:artist:1QKMqpWg2iIyVIx6MmWQuK" rel="noopener"><span>Spotify<small>Stream now</small></span></a>
         <a class="plat" href="https://music.apple.com/us/artist/london-steel/1448738718" target="_blank" rel="noopener"><span>Apple Music<small>Stream now</small></span></a>
         <a class="plat" href="https://www.youtube.com/channel/UCf0OCmieMfNYlbJN-_Sq3FQ" target="_blank" rel="noopener"><span>YouTube<small>Watch videos</small></span></a>
       </div>
@@ -348,7 +348,7 @@
       <li><span class="no">11</span><span class="name">Night and Day</span><span class="genre"></span><span class="dur">—</span></li>
     </ol>
     <div class="all-music">
-      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener">Hear the full catalog on Spotify →</a>
+      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" data-app-link="spotify:artist:1QKMqpWg2iIyVIx6MmWQuK" rel="noopener">Hear the full catalog on Spotify →</a>
     </div>
   </div>
 </section>
@@ -360,11 +360,33 @@
       <a href="https://www.instagram.com/london.steel" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@london.steel" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.youtube.com/channel/UCf0OCmieMfNYlbJN-_Sq3FQ" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://open.spotify.com/artist/1QKMqpWg2iIyVIx6MmWQuK" data-app-link="spotify:artist:1QKMqpWg2iIyVIx6MmWQuK" rel="noopener">Spotify</a>
       <a href="https://music.apple.com/us/artist/london-steel/1448738718" target="_blank" rel="noopener">Apple Music</a>
     </div>
   </div>
 </footer>
 
+<script>
+(function(){
+  var links=document.querySelectorAll('a[data-app-link]');
+  if(!links.length)return;
+  if(!(('ontouchstart' in window)||navigator.maxTouchPoints>0))return;
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var start=Date.now();
+      var timer=setTimeout(function(){
+        if(document.visibilityState==='visible'&&Date.now()-start<2500){
+          window.location.href=a.getAttribute('href');
+        }
+      },1200);
+      document.addEventListener('visibilitychange',function(){
+        if(document.visibilityState==='hidden')clearTimeout(timer);
+      });
+      window.location.href=a.getAttribute('data-app-link');
+    });
+  });
+})();
+</script>
 </body>
 </html>
