@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>London Steel — Official Site | Music, Faith & Family</title>
-<meta name="description" content="London Steel is a New York City singer, songwriter and producer. Husband, future girl dad, and Jesus follower making music. Listen to the music, read the free First-Time Dad Guide, and more.">
+<meta name="description" content="London Steel is a New York City singer, songwriter and producer. Husband, future girl dad, and Jesus follower making music. Listen to the new single, Chasing the Wind, streaming everywhere.">
 <link rel="icon" href="assets/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +78,23 @@
     font-size:10.5px;font-weight:800;letter-spacing:.16em;
     background:#141f0e;color:var(--sun);border-radius:999px;padding:5px 10px;
   }
+  button.link-btn{font-family:inherit;border:0;cursor:pointer;width:100%}
+  .link-btn .thumb.sq{border-radius:13px}
+  .link-btn .chev{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:15px;transition:transform .25s ease}
+  .song-btn[aria-expanded="true"] .chev{transform:translateY(-50%) rotate(180deg)}
+  .song-panel{display:grid;gap:9px;overflow:hidden;max-height:0;opacity:0;margin-top:0;transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease}
+  .song-panel.open{max-height:430px;opacity:1;margin-top:9px}
+  .plat-row{
+    display:flex;align-items:center;justify-content:center;min-height:50px;
+    padding:11px 18px;border-radius:999px;background:rgba(249,247,238,.10);
+    border:1px solid rgba(230,200,119,.35);color:var(--paper);
+    font-weight:700;font-size:15px;text-decoration:none;
+    transition:background .15s ease,border-color .15s ease;
+  }
+  .plat-row:hover{background:rgba(249,247,238,.18);border-color:var(--sun)}
+  .plat-row.more{border-style:dashed;color:#dde2c8}
+  .all-music-row{text-align:center;margin-top:2px}
+  .all-music-row a{color:#dde2c8;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid var(--bronze);padding-bottom:2px}
   footer{margin-top:34px;color:#aebba0;font-size:13px;line-height:1.7}
   footer a{color:#dde2c8;font-weight:700;text-decoration:none}
   footer a:hover{color:var(--sun)}
@@ -108,14 +125,20 @@
     </div>
 
     <div class="links">
-      <a class="link-btn featured" href="guide.html">
-        <span>The First-Time Dad Guide<small>Every trimester, labor &amp; delivery, postpartum</small></span>
-        <span class="free-tag">FREE</span>
-      </a>
-      <a class="link-btn" href="music.html">
-        <img class="thumb" src="assets/profile.jpg" alt="">
-        <span>Listen To My Music 🎵</span>
-      </a>
+      <div class="song-wrap">
+        <button class="link-btn featured song-btn" id="songToggle" aria-expanded="false" aria-controls="songPanel" type="button">
+          <img class="thumb sq" src="assets/chasing-the-wind.jpg" alt="Chasing the Wind cover art">
+          <span>Chasing the Wind<small>New single — tap to listen</small></span>
+          <span class="chev">▾</span>
+        </button>
+        <div class="song-panel" id="songPanel">
+          <a class="plat-row" href="https://open.spotify.com/track/38AdMwkuul6HQvCOuZZbIl" data-app-link="spotify:track:38AdMwkuul6HQvCOuZZbIl" rel="noopener">Spotify</a>
+          <a class="plat-row" href="https://music.apple.com/us/album/chasin-the-wind-single/6832141524?uo=4" target="_blank" rel="noopener">Apple Music</a>
+          <a class="plat-row" href="https://music.apple.com/us/album/chasin-the-wind-single/6832141524?uo=4&amp;app=itunes&amp;at=1001lry3&amp;ct=dashboard" target="_blank" rel="noopener">iTunes</a>
+          <a class="plat-row more" href="https://distrokid.com/hyperfollow/londonsteel/chasin-the-wind" target="_blank" rel="noopener">More platforms</a>
+          <div class="all-music-row"><a href="music.html">All my music →</a></div>
+        </div>
+      </div>
       <a class="link-btn" href="https://www.youtube.com/channel/UCf0OCmieMfNYlbJN-_Sq3FQ" target="_blank" rel="noopener">
         <span>Watch<small>Videos and reels on YouTube</small></span>
       </a>
@@ -151,6 +174,17 @@
       });
       window.location.href=a.getAttribute('data-app-link');
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('songToggle');
+  var panel=document.getElementById('songPanel');
+  if(!btn||!panel)return;
+  btn.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
   });
 })();
 </script>
